@@ -23,25 +23,39 @@ noobsimba.speed = 3
 
 print("A Noob Simba appears!")
 
+while True:
+    if noobsimba.speed > spheal.speed:
+        sphealdamage = noobsimba.attack - spheal.defense
+        spheal.health = spheal.health - sphealdamage
+        print("The Noob Simba attacks!")
+        print("Spheal took {} damage!".format(sphealdamage))
+        print("Spheal has {} HP remaining.".format(spheal.health))
+        if spheal.health > 0:
+            print("What will Spheal do?")
+            print("Attack")
+            print("Special")
+            print("Items")
+            sphealmove = input("> ")
+            if sphealmove == 'attack':
+                print("Spheal attacks!")
+                noobsimbadamage = spheal.attack - noobsimba.defense
+                noobsimba.health = noobsimba.health - noobsimbadamage
+                print("The Noob Simba took {} damage!".format(noobsimbadamage))
+            if sphealmove == 'special':
+                print("Which move should Spheal use?")
+                print("Rollout")
+                print("Mamo")
+                print("Blizzard")
+                sphealspecial = input("> ")
+                if sphealspecial == 'rollout'
 
-if noobsimba.speed > spheal.speed:
-    sphealdamage = noobsimba.attack - spheal.defense
-    spheal.health = spheal.health - sphealdamage
-    print("The Noob Simba attacks!")
-    print("Spheal took {} damage!".format(sphealdamage))
-    print("Spheal has {} HP remaining.".format(spheal.health))
-    if spheal.health > 0:
-        print("What will Spheal do?")
-        print("Attack")
-        print("Special")
-        print("Items")
-        sphealmove = input("> ")
-        if sphealmove == 'attack':
-            print("Spheal attacks!")
-            noobsimbadamage = spheal.attack - noobsimba.defense
-            noobsimba.health = noobsimba.health - noobsimbadamage
-            print("The Noob Simba took {} damage!".format(noobsimbadamage))
-                    
-                      
+    if noobsimba.health <= 0:
+        print("The Noob Simba was defeated!")
+        print("You won the battle!")
+        break
+    if spheal.health <= 0:
+        print("Spheal was deafeated...")
+        print("You lost the battle...")
+        break              
               
     
